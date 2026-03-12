@@ -5,8 +5,8 @@ export const ExchangeList = () => {
   const [data, setData] = useState(null);
 
   const fetchData = async (currency) => {
-    const reponse = await fetch("http://localhost:3334/volume");
-    const data = await reponse.json();
+    const response = await fetch("http://localhost:3334/volume");
+    const data = await response.json();
     const sortedData = data && data.sort((a, b) => b.volume - a.volume);
     const currencyData =
       sortedData && sortedData.filter((item) => item.currency === currency);
